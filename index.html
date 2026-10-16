@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Consulta de CEP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Endereços do Brasil</p>
+    <h1>Consulta de CEP</h1>
+    <p class="description">Digite um CEP para encontrar o endereço correspondente.</p>
+
+    <form id="cep-form">
+      <label for="cep">CEP</label>
+      <div class="search-row">
+        <input
+          id="cep"
+          name="cep"
+          type="text"
+          inputmode="numeric"
+          autocomplete="postal-code"
+          placeholder="00000-000"
+          maxlength="9"
+          aria-describedby="cep-hint"
+          required
+        >
+        <button id="search-button" type="submit">Consultar</button>
+      </div>
+      <p class="hint" id="cep-hint">Informe os 8 dígitos do CEP.</p>
+    </form>
+
+    <p class="message" id="message" role="status" aria-live="polite"></p>
+
+    <dl class="results" id="results" aria-label="Endereço encontrado" hidden>
+      <div class="result wide">
+        <dt>Rua</dt>
+        <dd id="street"></dd>
+      </div>
+      <div class="result wide">
+        <dt>Bairro</dt>
+        <dd id="neighborhood"></dd>
+      </div>
+      <div class="result">
+        <dt>Cidade</dt>
+        <dd id="city"></dd>
+      </div>
+      <div class="result">
+        <dt>Estado</dt>
+        <dd id="state"></dd>
+      </div>
+    </dl>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
